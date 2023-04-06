@@ -1,0 +1,39 @@
+:root {
+  font-family: "SF Pro Display", sans-serif;
+  src: url("https://fonts.cdnfonts.com/css/sf-pro-display");
+  background-color: #d9e6f7;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  justify-content: space-between;
+}
+.nav-bar {
+  display: flex;
+  background-color: #fdfeff;
+  justify-content: space-around;
+  width: auto;
+  height: 92px;
+  align-items: center;
+}
+.baseboard {
+  display: flex;
+  background-color: #fdfeff;
+  align-items: center;
+  justify-content: center;
+  height: 48px;
+  width: 100%;
+}
+.baseboard-content {
+  color: #ed2590;
+}
+.info-header {
+  display: flex;
+  justify-content: space-between;
+  width: 301px;
+}
+.logo-orkut {
+  width: 107px;
+  height: 32px;
+}
