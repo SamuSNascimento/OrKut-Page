@@ -37,3 +37,22 @@
   width: 107px;
   height: 32px;
 }
+.content {
+  display: flex;
+  height: 100%;
+  align-items: center;
+  justify-content: center;
+}
+.main-image {
+  width: 500px;
+  height: 350px;
+  margin-right: 32px;
+}
+.login-box {
+  justify-content: center;
+  display: flex;
+  width: 270px;
+  height: 350px;
+  background-color: #fdfeff;
+  border-radius: 16px;
+}

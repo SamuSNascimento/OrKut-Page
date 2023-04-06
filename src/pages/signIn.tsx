@@ -1,5 +1,6 @@
 import React from "react";
 import orkutLogo from "../assets/img/logo-orkut.png";
+import image from "../assets/img/image.png";
 
 const SignIn: React.FC = () => {
   return (
@@ -10,6 +11,10 @@ const SignIn: React.FC = () => {
           <p>Sobre o Orkut</p>
           <p>Centro de segurança</p>
         </div>
+      </div>
+      <div className="content">
+        <img className="main-image" src={image} alt="Imagem" />
+        <div className="login-box"></div>
       </div>
       <div className="baseboard">
         <p className="baseboard-content">Todos os direitos reservados</p>
