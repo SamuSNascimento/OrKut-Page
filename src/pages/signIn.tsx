@@ -21,33 +21,30 @@ const SignIn: React.FC = () => {
   const StyledInput = styled.input`
     background: #eff3f8;
     border-radius: 8px;
-    width: 80%;
-    height: 12%;
+    width: 95%;
+    height: 50px;
     border: none;
-    margin-top: 5%;
     padding-left: 10px;
     font-size: 16px;
     outline-color: #ed2590;
   `;
 
   const StyleTitle = styled.h1`
-    font-size: 24px;
+    font-size: 20px;
     font-weight: 600;
     color: #ed2590;
-    margin-top: 13px;
+    margin-top: 10px;
   `;
 
   const StyledButton = styled.button`
     cursor: pointer;
     width: 100%;
-    height: 30%;
+    height: 50px;
     border: none;
     background: #ed2590;
     border-radius: 8px;
     color: #ffffff;
     font-size: 16px;
-    margin-top: 20px;
-    transition: all 0.5s;
 
     &.secondary {
       background: #eff3f8;
@@ -58,40 +55,58 @@ const SignIn: React.FC = () => {
       -webkit-filter: drop-shadow(10px 5px 5px rgba(0, 0, 0, 0.5));
       filter: drop-shadow(10px 5px 5px rgba(0, 0, 0, 0.5));
     }
+
+    &:active {
+      transform: scale(0.98);
+      box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+    }
   `;
 
   return (
-    <div className="container">
+    <div className="container-sign-in">
       <StyledNavBar>
-        <img className="logo-orkut" src={orkutLogo} alt="Logo" />
-        <div className="info-header">
-          <p className="text">Sobre o Orkut</p>
-          <p className="text">Centro de segurança</p>
+        <img className="logo-orkut-sign-in" src={orkutLogo} alt="Logo" />
+        <div className="info-header-sign-in">
+          <p className="text-sign-in">Sobre o Orkut</p>
+          <p className="text-sign-in">Centro de segurança</p>
         </div>
       </StyledNavBar>
-      <div className="content">
-        <img className="main-image" src={image} alt="Imagem" />
-        <div className="login-box">
-          <div className="header-login-box">
-            <img className="circle-image" src={circle} alt="circle" />
+      <div className="content-sign-in">
+        <img className="main-image-sign-in" src={image} alt="Imagem" />
+        <div className="login-box-sign-in">
+          <div className="header-login-box-sign-in">
+            <img className="circle-image-sign-in" src={circle} alt="circle" />
             <StyleTitle>Acesse o OrKut</StyleTitle>
           </div>
-          <StyledInput placeholder="E-mail"></StyledInput>
-          <StyledInput type="password" placeholder="Senha"></StyledInput>
-          <label className="checkbox">
-            <input type="checkbox" />
-            <span className="checkmark"></span>
-            Lembrar minha senha
-          </label>
-          <div className="buttons-login-box">
-            <StyledButton>Entrar na conta</StyledButton>
-            <StyledButton className="secondary">Criar uma conta</StyledButton>
+          <div className="inputs-sign-in">
+            <StyledInput placeholder="E-mail"></StyledInput>
+            <StyledInput type="password" placeholder="Senha"></StyledInput>
+            <label className="checkbox-sign-in">
+              <input type="checkbox" />
+              <span className="checkmark"></span>
+              Lembrar minha senha
+            </label>
           </div>
-          <p className="baseboard-text text">Esqueci minha senha</p>
+          <div className="buttons-login-box-sign-in">
+            <StyledButton onClick={() => console.log("Entrar")}>
+              Entrar na conta
+            </StyledButton>
+            <StyledButton
+              onClick={() => console.log("Criar")}
+              className="secondary"
+            >
+              Criar uma conta
+            </StyledButton>
+            <p className="baseboard-text-sign-in text-sign-in text">
+              Esqueci minha senha
+            </p>
+          </div>
         </div>
       </div>
       <StyledNavBar className="secondary">
-        <p className="baseboard-text text">Todos os direitos reservados</p>
+        <p className="baseboard-text-sign-in text-sign-in">
+          Todos os direitos reservados
+        </p>
       </StyledNavBar>
     </div>
   );
