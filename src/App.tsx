@@ -1,4 +1,5 @@
 import { LOGIN_PAGE, PROFILE_PAGE } from "./config/pages";
+import { useState } from "react";
 import "./styles/App.css";
 import SignIn from "./pages/signIn";
 import Profile from "./pages/profile";

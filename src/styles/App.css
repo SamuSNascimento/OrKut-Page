@@ -23,13 +23,14 @@
 .content-sign-in {
   display: flex;
   height: 100%;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
+  gap: 32px;
+  padding-top: 40px;
 }
 .main-image-sign-in {
   width: 580px;
   height: 470px;
-  margin-right: 32px;
 }
 .login-box-sign-in {
   justify-content: center;
@@ -81,7 +82,7 @@
   display: flex;
   flex-direction: column;
   height: 100vh;
-  justify-content: space-between;
+  gap: 40px;
 }
 .info-header-profile {
   display: flex;
@@ -99,26 +100,30 @@
 .content-profile {
   display: flex;
   height: 100%;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
 }
 .profile {
   display: flex;
   align-items: center;
   flex-direction: column;
-  width: 20%;
-  height: 90%;
+  width: 270px;
+  height: 525px;
 }
 .basic-information-profile {
   display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
   width: 80%;
   height: 50%;
   background-color: #fdfeff;
   border-radius: 16px;
+  gap: 20px;
 }
 .information-profile {
-  width: 40%;
-  height: 90%;
+  width: 500px;
+  height: 525px;
   background-color: #fdfeff;
   border-radius: 16px;
 }
@@ -127,18 +132,69 @@
   flex-direction: column;
   display: flex;
   justify-content: space-between;
-  width: 20%;
-  height: 90%;
+  width: 350px;
+  height: 525px;
 }
-.users-profile {
+.users-container-profile {
   display: flex;
-  width: 80%;
-  height: 47%;
+  width: 86%;
+  height: 60%;
+  border: solid 5px #fdfeff;
+  justify-content: center;
   background-color: #fdfeff;
   border-radius: 16px;
+  overflow-y: scroll;
+  overflow-x: hidden;
+  flex-wrap: wrap;
 }
 .bar-information-profile {
   display: flex;
   width: 12%;
   height: 70%;
+}
+.img-poke-header-profile {
+  border-radius: 80px;
+  width: 40px;
+  height: 40px;
+  border: solid 1px #ed2590;
+  cursor: pointer;
+}
+.header-profile {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+  width: 135px;
+}
+.img-poke-profile {
+  width: 140px;
+  height: 140px;
+  border-radius: 100px;
+  border: solid 3px #ed2590;
+}
+.user-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 5px;
+  width: 96px;
+  height: 100px;
+}
+.header-users-profile {
+  width: 100%;
+  height: 70px;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+.users-container-profile::-webkit-scrollbar {
+  width: 12px;
+}
+
+.users-container-profile::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.users-container-profile::-webkit-scrollbar-thumb {
+  background-color: #ed2590;
+  border-radius: 16px;
 }
