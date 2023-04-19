@@ -102,17 +102,16 @@ const SignIn: React.FC = () => {
             />
             <label className="checkbox-sign-in">
               <input type="checkbox" />
-              <span className="checkmark"></span>
               Lembrar minha senha
+              <span className="checkmark"></span>
             </label>
           </div>
           <div className="buttons-login-box-sign-in">
             <StyledButton
               onClick={() => {
                 if (email === user && password === senha) {
-                  // setRequisition("pokemon/pikachu");
                   navigation(PROFILE_PAGE);
-                  sessionStorage.setItem("requisition", "pokemon/pikachu");
+                  sessionStorage.setItem("requisition", "pokemon/25/");
                 } else {
                   alert("ta errado");
                 }
