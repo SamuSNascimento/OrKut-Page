@@ -2,19 +2,7 @@ import React, { useEffect, useState } from "react";
 import styled from "styled-components";
 import orkutLogo from "../assets/img/logo-orkut.png";
 import api from "../services/api";
-
-const StyledUsersContainer = styled.div`
-  display: flex;
-  width: 86%;
-  height: 60%;
-  border: solid 5px #fdfeff;
-  background-color: #fdfeff;
-  border-radius: 16px;
-  overflow-y: scroll;
-  overflow-x: hidden;
-  gap: 4px;
-  flex-wrap: wrap;
-`;
+import "../styles/profile.css";
 
 const StyledNavBar = styled.span`
   display: flex;
@@ -23,6 +11,12 @@ const StyledNavBar = styled.span`
   width: auto;
   height: 92px;
   align-items: center;
+
+  @media (max-width: 600px) {
+    justify-content: space-around;
+    height: 60px;
+    width: 100%;
+  }
 `;
 const StyledUserButton = styled.button`
   display: flex;
@@ -51,7 +45,7 @@ const StyledArrow = styled.div`
   border-color: #ed2590;
 `;
 
-const StyledInput = styled.input`
+const StyledNavInput = styled.input`
   background: #eff3f8;
   border-radius: 8px;
   width: 25%;
@@ -60,6 +54,25 @@ const StyledInput = styled.input`
   padding-left: 10px;
   font-size: 16px;
   outline-color: #ed2590;
+
+  @media (max-width: 600px) {
+    display: none;
+  }
+`;
+
+const StyledInput = styled.input`
+  background: #fdfeff;
+  border-radius: 8px;
+  width: 310px;
+  height: 44px;
+  border: none;
+  padding-left: 10px;
+  font-size: 16px;
+  outline-color: #ed2590;
+
+  @media (min-width: 600px) {
+    display: none;
+  }
 `;
 
 const StyledButton = styled.button`
@@ -81,6 +94,17 @@ const StyledButton = styled.button`
   &:active {
     transform: scale(0.98);
     box-shadow: 3px 2px 22px 1px rgba(0, 0, 0, 0.24);
+  }
+
+  @media (max-width: 600px) {
+    width: 100%;
+    height: 50px;
+    border: none;
+    background: #eff3f8;
+    border-radius: 8px;
+    color: #ed2590;
+    font-size: 16px;
+    margin-top: 20px;
   }
 `;
 
@@ -129,7 +153,7 @@ const Profile: React.FC = () => {
   return (
     <div className="container-profile">
       <StyledNavBar>
-        <img className="logo-orkut" src={orkutLogo} alt="Logo" />
+        <img className="logo-orkut-sign-in" src={orkutLogo} alt="Logo" />
         <div className="info-header-profile">
           <p className="text-profile text-color-profile">Início</p>
           <p
@@ -143,7 +167,7 @@ const Profile: React.FC = () => {
           <p className="text-profile text-color-profile">Comunidades</p>
           <p className="text-profile text-color-profile">Jogos</p>
         </div>
-        <StyledInput
+        <StyledNavInput
           placeholder="Pesquisar no Orkut"
           value={search}
           onChange={(event) => setSearch(event.target.value)}
@@ -157,11 +181,18 @@ const Profile: React.FC = () => {
             src={myImgPoke.front_default}
             alt="pokemon"
           />
-          <p>{myPoke.name}</p>
+          <p className="name-profile">{myPoke.name}</p>
           <StyledArrow />
         </div>
       </StyledNavBar>
       <div className="content-profile">
+        <div>
+          <StyledInput
+            placeholder="Pesquisar no Orkut"
+            value={search}
+            onChange={(event) => setSearch(event.target.value)}
+          />
+        </div>
         <div className="profile">
           <div className="basic-information-profile">
             <img
@@ -207,9 +238,7 @@ const Profile: React.FC = () => {
           <div className="users-container-profile">
             <div className="header-users-profile">
               <p>Amigos({pokes.length})</p>
-              <p className="baseboard-text-sign-in text-sign-in text">
-                Ver todos
-              </p>
+              <p className="baseboard-text-sign-in text">Ver todos</p>
             </div>
             <div className="users-profile">
               {filterPokes.map((element) => (
@@ -232,6 +261,31 @@ const Profile: React.FC = () => {
                 </StyledUserButton>
               ))}
             </div>
+          </div>
+        </div>
+        <div className="information-responsive-profile">
+          <div className="header-information-profile">
+            <p className="text-name-profile text-color-profile">
+              Boa tarde, {namePoke.name}
+            </p>
+            <div className="status-profile">
+              <p>Eu sou do tipo: {typePoke.name}</p>
+            </div>
+          </div>
+          <div className="content-information-profile">
+            <span>
+              Tipo: <p>{typePoke.name}</p>
+            </span>
+            <span>
+              Espécie: <p>{namePoke.name}</p>
+            </span>
+            <span>
+              Habilidade: <p>{abilityPoke.name}</p>
+            </span>
+            <span>
+              Movimento:
+              <p>{movePoke.name}</p>
+            </span>
           </div>
         </div>
       </div>

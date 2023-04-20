@@ -5,17 +5,24 @@ import circle from "../assets/img/Vector.png";
 import styled from "styled-components";
 import { useNavigate } from "react-router-dom";
 import { PROFILE_PAGE } from "../config/pages";
+import "../styles/signIn.css";
 
 const StyledNavBar = styled.span`
   display: flex;
   background-color: #fdfeff;
   justify-content: space-around;
-  width: auto;
+  width: 100%;
   height: 92px;
   align-items: center;
 
   &.secondary {
     height: 48px;
+  }
+
+  @media (max-width: 600px) {
+    justify-content: center;
+    height: 80px;
+    width: 100%;
   }
 `;
 
@@ -125,16 +132,12 @@ const SignIn: React.FC = () => {
             >
               Criar uma conta
             </StyledButton>
-            <p className="baseboard-text-sign-in text-sign-in text">
-              Esqueci minha senha
-            </p>
+            <p className="baseboard-text-sign-in text">Esqueci minha senha</p>
           </div>
         </div>
       </div>
       <StyledNavBar className="secondary">
-        <p className="baseboard-text-sign-in text-sign-in">
-          Todos os direitos reservados
-        </p>
+        <p className="baseboard-text-sign-in">Todos os direitos reservados</p>
       </StyledNavBar>
     </div>
   );
