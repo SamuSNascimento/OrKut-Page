@@ -1,10 +1,11 @@
 import React from "react";
+import { InfoPokesDto } from "../dto/infoPokesDto";
 
 type Props = {
-  namePoke: Array<string>;
-  typePoke: Array<string>;
-  abilityPoke: Array<string>;
-  movePoke: Array<string>;
+  namePoke: InfoPokesDto;
+  typePoke: InfoPokesDto;
+  abilityPoke: InfoPokesDto;
+  movePoke: InfoPokesDto;
 };
 
 export const InfoResumeResponsive: React.FC<Props> = ({
