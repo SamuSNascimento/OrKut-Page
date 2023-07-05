@@ -14,20 +14,43 @@ import {
   InfoResumeResponsive,
 } from "../components/informationResume";
 import "../styles/profile.css";
+import { PokemonsDto } from "../dto/pokemonsDto";
+import { InfoPokesDto } from "../dto/infoPokesDto";
 
 const Profile: React.FC = () => {
   const [requisition, setRequisition] = useState<string>(
     `${sessionStorage.getItem("requisition")}`
   );
-  const [myImgPoke, setMyImgPoke] = useState([]);
-  const [myPoke, setMyPoke] = useState([]);
-  const [search, setSearch] = useState<string>("");
-  const [imgPoke, setImgPoke] = useState([]);
-  const [pokes, setPokes] = useState([]);
-  const [namePoke, setNamePoke] = useState([]);
-  const [typePoke, setTypePoke] = useState([]);
-  const [abilityPoke, setAbilityPoke] = useState([]);
-  const [movePoke, setMovePoke] = useState([]);
+  const [myImgPoke, setMyImgPoke] = useState<InfoPokesDto>({
+    name: "",
+    front_default: "",
+  });
+  const [myPoke, setMyPoke] = useState<InfoPokesDto>({
+    name: "",
+    front_default: "",
+  });
+  const [search, setSearch] = useState("");
+  const [imgPoke, setImgPoke] = useState<InfoPokesDto>({
+    name: "",
+    front_default: "",
+  });
+  const [pokes, setPokes] = useState<PokemonsDto[]>([]);
+  const [namePoke, setNamePoke] = useState<InfoPokesDto>({
+    name: "",
+    front_default: "",
+  });
+  const [typePoke, setTypePoke] = useState<InfoPokesDto>({
+    name: "",
+    front_default: "",
+  });
+  const [abilityPoke, setAbilityPoke] = useState<InfoPokesDto>({
+    name: "",
+    front_default: "",
+  });
+  const [movePoke, setMovePoke] = useState<InfoPokesDto>({
+    name: "",
+    front_default: "",
+  });
 
   useEffect(() => {
     api.get("pokemon?offset=40&limit=123").then(({ data }) => {
