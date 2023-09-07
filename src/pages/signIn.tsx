@@ -1,6 +1,6 @@
 import React from "react";
 import orkutLogo from "../assets/img/logo-orkut.png";
-import image from "../assets/img/image.png";
+import image from "../assets/img/poke.png";
 import { StyledNavBar } from "../components/styledCompSignIn";
 import LoginBox from "../components/loginBox";
 import "../styles/signIn.css";
@@ -20,7 +20,13 @@ const SignIn: React.FC = () => {
         <LoginBox />
       </div>
       <StyledNavBar className="secondary">
-        <p className="baseboard-text-sign-in">Todos os direitos reservados</p>
+        <a
+          className="baseboard-text-sign-in"
+          href="https://www.orkut.com/"
+          target="_blank"
+        >
+          <p className="baseboard-text-sign-in">Todos os direitos reservados</p>
+        </a>
       </StyledNavBar>
     </div>
   );
