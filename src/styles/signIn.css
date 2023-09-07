@@ -6,6 +6,7 @@
   }
   .baseboard-text-sign-in {
     color: #ed2590;
+    text-decoration: none;
   }
   .baseboard-text-sign-in:hover {
     text-decoration: underline;
@@ -23,13 +24,11 @@
   .content-sign-in {
     display: flex;
     height: 100%;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
-    gap: 32px;
-    padding-top: 40px;
+    gap: 130px;
   }
   .main-image-sign-in {
-    width: 580px;
     height: 470px;
   }
   .login-box-sign-in {
@@ -68,7 +67,10 @@
     gap: 20px;
   }
   .checkbox-sign-in {
+    display: flex;
+    align-items: center;
     color: #868686;
+    gap: 2px;
   }
   .buttons-login-box-sign-in {
     align-items: center;
@@ -84,7 +86,7 @@
   .container-sign-in {
     display: flex;
     flex-direction: column;
-    height: 100vh;
+    height: 100svh;
     justify-content: space-between;
     align-items: center;
   }
@@ -95,10 +97,9 @@
   .content-sign-in {
     display: flex;
     height: 100%;
-    align-items: flex-start;
+    align-items: center;
     justify-content: center;
     gap: 32px;
-    padding-top: 40px;
   }
   .login-box-sign-in {
     flex-direction: column;

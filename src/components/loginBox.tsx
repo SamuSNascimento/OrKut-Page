@@ -15,9 +15,6 @@ const LoginBox: React.FC = () => {
 
   const navigation = useNavigate();
 
-  const user = "samuelsantosn4@gmail.com";
-  const senha = "samuel123";
-
   return (
     <div className="login-box-sign-in">
       <div className="header-login-box-sign-in">
@@ -30,33 +27,31 @@ const LoginBox: React.FC = () => {
           value={email}
           onChange={(event) => setEmail(event.target.value)}
         />
-        <StyledInput
-          type="password"
-          placeholder="Senha"
-          value={password}
-          onChange={(event) => setPassword(event.target.value)}
-        />
+        <div className="password-input">
+          <StyledInput
+            type="password"
+            placeholder="Senha"
+            value={password}
+            onChange={(event) => setPassword(event.target.value)}
+          />
+        </div>
         <label className="checkbox-sign-in">
           <input type="checkbox" />
-          Lembrar minha senha
+          <p>Lembrar minha senha</p>
           <span className="checkmark"></span>
         </label>
       </div>
       <div className="buttons-login-box-sign-in">
         <StyledButton
           onClick={() => {
-            if (email === user && password === senha) {
-              navigation(PROFILE_PAGE);
-              sessionStorage.setItem("requisition", "pokemon/25/");
-            } else {
-              alert("ta errado");
-            }
+            navigation(PROFILE_PAGE);
+            sessionStorage.setItem("requisition", "pokemon/25/");
           }}
         >
           Entrar na conta
         </StyledButton>
         <StyledButton
-          onClick={() => console.log("Criar")}
+          onClick={() => navigation("/CriarSenha")}
           className="secondary"
         >
           Criar uma conta

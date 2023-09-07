@@ -4,6 +4,7 @@ import "./styles/App.css";
 import SignIn from "./pages/signIn";
 import Profile from "./pages/profile";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import NotFound from "./pages/notFound";
 
 const App = () => {
   return (
@@ -11,9 +12,8 @@ const App = () => {
       <div className="App">
         <Routes>
           <Route path={LOGIN_PAGE} element={<SignIn />} />
-        </Routes>
-        <Routes>
           <Route path={PROFILE_PAGE} element={<Profile />} />
+          <Route path="*" element={<NotFound />} />
         </Routes>
       </div>
     </Router>
