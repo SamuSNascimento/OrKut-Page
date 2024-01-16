@@ -15,9 +15,6 @@ const LoginBox: React.FC = () => {
 
   const navigation = useNavigate();
 
-  const user = "samuelsantosn4@gmail.com";
-  const senha = "samuel123";
-
   return (
     <div className="login-box-sign-in">
       <div className="header-login-box-sign-in">
@@ -45,12 +42,8 @@ const LoginBox: React.FC = () => {
       <div className="buttons-login-box-sign-in">
         <StyledButton
           onClick={() => {
-            if (email === user && password === senha) {
               navigation(PROFILE_PAGE);
               sessionStorage.setItem("requisition", "pokemon/25/");
-            } else {
-              alert("ta errado");
-            }
           }}
         >
           Entrar na conta
